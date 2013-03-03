@@ -1,7 +1,9 @@
-<!doctype html>
-<title>Hello from Flask</title>
-<% if name %>
-  <h1>Hello %% name %%!</h1>
-<% else %>
-  <h1>Hello World!</h1>
-<% endif %>
+<% extends "base.html" %>
+
+<% block content %>
+    <div class="row">
+        <div class="large-12 columns">
+            <h1 class="centered"> Hello, World! </h1>
+        </div>
+    </div>
+<% endblock %>
