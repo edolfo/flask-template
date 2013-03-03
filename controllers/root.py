@@ -6,6 +6,6 @@ views = Blueprint('root', __name__, template_folder='templates')
 @views.route('/')
 def index():
     try:
-        return render_template('index.html')
+        return render_template('base.html')
     except TemplateNotFound:
         abort(404)
