@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import os, sys
 from controllers import root
 
@@ -14,6 +14,11 @@ class CustomFlask(Flask):
     ))
 
 app = CustomFlask('rpgify')
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html'), 404
+
 app.register_blueprint(root.views)
 
 if __name__ == "__main__":
