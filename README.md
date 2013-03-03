@@ -12,7 +12,7 @@ to the $IP and $PORT environment variables.
 Installation requires [flask](http://flask.pocoo.org/).  In c9, you will need to
 open a terminal, then run the following:
 
-`easy_install pip`
-`pip install flask`
+* `easy_install pip`
+* `pip install flask`
 
 Then to run the app, in the same folder as `rpgify.py`, run `python rpgify.py`.
