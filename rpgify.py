@@ -1,12 +1,10 @@
 from flask import Flask
 import os, sys
+from controllers import root
 
 app = Flask('rpgify')
+app.register_blueprint(root.views)
 
-@app.route("/")
-def hello():
-    return "Hello world!"
-    
 if __name__ == "__main__":
     app.static_folder = 'static'
     app.template_folder = 'templates'
