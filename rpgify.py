@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import os, sys
 from controllers import root
-import db.db as dbLib
+import db.model as dbLib
 
 class CustomFlask(Flask):
     jinja_options = Flask.jinja_options.copy()
