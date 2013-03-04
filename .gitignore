@@ -36,3 +36,6 @@ nosetests.xml
 
 # Cloud9
 .c9revisions/*
+
+# db secrets
+db/secrets.py
