@@ -1,0 +1,32 @@
+<% extends "base.html" %>
+
+<% block content %>
+    <div class="row">
+        <div class="large-12 columns">
+            <h1 class="centered"> Login </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <form action="/login/handler">
+                <div class="row">
+                    <div class="large-6 columns large-centered">
+                        <label>email</label>
+                        <input name="email" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns large-centered">
+                        <label>passphrase</label>
+                        <input name="passwd" type="password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns large-centered">
+                        <button class="button round large expand" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<% endblock %>
