@@ -1,7 +1,9 @@
 from flask import Flask, render_template
 import os, sys
-from controllers import root
-import db.model as dbLib
+from controllers import root, accounts
+import db.model as model
+import db.user  as userLib
+from routes import createRoutes
 
 class CustomFlask(Flask):
     jinja_options = Flask.jinja_options.copy()
@@ -20,16 +22,14 @@ app = CustomFlask('rpgify')
 def not_found(error):
     return render_template('404.html'), 404
 
+createRoutes()
 app.register_blueprint(root.views)
+app.register_blueprint(accounts.views)
 
-if __name__ == "__main__":
-    app.static_folder = 'static'
-    app.template_folder = 'templates'
-    port = int(os.environ['PORT'])
-    host = os.environ['IP']
-    app.debug = True
-    
-    #DB connection
-    app = dbLib.initDB(app)
-    
-    app.run(port = port, host = host)
+app.static_folder = 'static'
+app.template_folder = 'templates'
+app.debug = True
+
+#DB connection
+(app, db) = model.initDB(app)
+userLib.adminAccount(app, db)
