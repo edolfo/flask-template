@@ -17,10 +17,16 @@ and [flask-bcrypt](http://pythonhosted.org/Flask-Bcrypt/).  In c9, you will need
 3. `pip install flask-mongokit`
 4. `pip install flask-bcrypt`
 
-Then to run the app, in the same folder as `rpgify.py`, run `python rpgify.py`.
+Then to run the app, in the same folder as `run.py`, run `python run.py`.
 
 Setup
 =====
 
 You will need to change the file `db/secrets.template.py` to simply `db/secrets.py`,
 and update the values within accordingly.
+
+Notes
+=====
+
+This project has modified the basic Flask project by imposing a bit of directory
+structure for some more modularity.
