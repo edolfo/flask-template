@@ -1,11 +1,11 @@
 from datetime import datetime
 
-#from flask import Flask, request, render_template, redirect, url_for
 from flask.ext.mongokit import Document
 import flaskext.bcrypt  as Bcrypt
 
 import utils    as utils
 import secrets  as secrets
+from rpgify.model import db
 
 class User(Document):
     __collection__='users'
@@ -23,7 +23,9 @@ class User(Document):
     def __repr__(self):
         return '<User %r>' % (self.email)
     
-def adminAccount(app, db):
+db.register([User])
+
+def adminAccount(app):
     with app.app_context():
         if not db.User.find_one({'email': secrets.admin['email']}):
             admin = db.User()

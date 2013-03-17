@@ -38,4 +38,4 @@ nosetests.xml
 .c9revisions/*
 
 # db secrets
-rpgify/db/secrets.py
+rpgify/model/secrets.py

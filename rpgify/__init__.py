@@ -1,9 +1,6 @@
 from flask import Flask, render_template
 import os, sys
-from controllers import root, accounts
-import db.model as model
-import db.user  as userLib
-from routes import createRoutes
+from rpgify.model import initDB, db
 
 class CustomFlask(Flask):
     jinja_options = Flask.jinja_options.copy()
@@ -17,6 +14,11 @@ class CustomFlask(Flask):
     ))
 
 app = CustomFlask('rpgify')
+initDB(app)
+
+from controllers import root, accounts
+import model.user  as userLib
+from routes import createRoutes
 
 @app.errorhandler(404)
 def not_found(error):
@@ -30,6 +32,4 @@ app.static_folder = 'static'
 app.template_folder = 'templates'
 app.debug = True
 
-#DB connection
-(app, db) = model.initDB(app)
-userLib.adminAccount(app, db)
+userLib.adminAccount(app)
