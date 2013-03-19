@@ -5,7 +5,7 @@ import flaskext.bcrypt  as Bcrypt
 
 import utils    as utils
 import secrets  as secrets
-from rpgify.model import db
+from myApp.model import db
 
 class User(Document):
     __collection__='users'

@@ -1,7 +1,11 @@
-rpgify
+Flask-template
 ======
 
-rpgify your life
+Boilerplate code that adds some structure to a Flask project.  Uses Zurb's Foundation
+framework on the frontend and MongoDB for data persistence.
+
+controllers: Backend server logic
+model: Stores
 
 Installation
 ============
@@ -17,16 +21,17 @@ and [flask-bcrypt](http://pythonhosted.org/Flask-Bcrypt/).  In c9, you will need
 3. `pip install flask-mongokit`
 4. `pip install flask-bcrypt`
 
-Then to run the app, in the same folder as `run.py`, run `python run.py`.
-
 Setup
 =====
 
 You will need to change the file `db/secrets.template.py` to simply `db/secrets.py`,
 and update the values within accordingly.
 
-Notes
-=====
+Then to run the app, in the same folder as `run.py`, run `python run.py`.
 
-This project has modified the basic Flask project by imposing a bit of directory
-structure for some more modularity.
+Roadmap
+=======
+
+* A setup script for customizing the application name
+* Sessions
+* Login/logout functionality

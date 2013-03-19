@@ -1,4 +1,4 @@
-from rpgify import app
+from myApp import app
 import os
 
 port = int(os.environ['PORT'])

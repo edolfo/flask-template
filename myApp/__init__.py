@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import os, sys
-from rpgify.model import initDB, db
+from myApp.model import initDB, db
 
 class CustomFlask(Flask):
     jinja_options = Flask.jinja_options.copy()
@@ -13,7 +13,7 @@ class CustomFlask(Flask):
         comment_end_string='#>',
     ))
 
-app = CustomFlask('rpgify')
+app = CustomFlask('myApp')
 initDB(app)
 
 from controllers import root, accounts

@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, abort, request
 from jinja2 import TemplateNotFound
-import rpgify.model.user as userLib
+import myApp.model.user as userLib
 
 views = Blueprint('accounts', __name__, template_folder='templates')
 
