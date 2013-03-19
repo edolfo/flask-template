@@ -4,8 +4,10 @@ Flask-template
 Boilerplate code that adds some structure to a Flask project.  Uses Zurb's Foundation
 framework on the frontend and MongoDB for data persistence.
 
-controllers: Backend server logic
-model: Stores
+* myApp/controllers: Backend server logic
+* myApp/model: Database storage abstractions
+* myApp/templates: HTML files
+* myApp/static: Javascript and CSS files
 
 Installation
 ============
