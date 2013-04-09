@@ -2,7 +2,8 @@ Flask-template
 ======
 
 Boilerplate code that adds some structure to a Flask project.  Uses Zurb's Foundation
-framework on the frontend and MongoDB for data persistence.
+framework on the frontend and MongoDB for data persistence.  This also includes
+session support and login/logout functionality.
 
 * myApp/controllers: Backend server logic
 * myApp/model: Database storage abstractions
@@ -35,5 +36,3 @@ Roadmap
 =======
 
 * A setup script for customizing the application name
-* Sessions
-* Login/logout functionality
