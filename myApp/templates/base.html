@@ -31,8 +31,13 @@
             <!-- Right Nav Section -->
             <ul class="right">
                 <li class="divider"></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/signup">Signup</a></li>                
+                <% if not session.email %>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">Signup</a></li>
+                <% else %>
+                    <li><a href="#">%% session.email %%</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <% endif %>
             </ul>
         </section>
     </nav>

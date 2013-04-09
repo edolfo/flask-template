@@ -19,6 +19,7 @@ initDB(app)
 from controllers import root, accounts
 import model.user  as userLib
 from routes import createRoutes
+from model.secrets import secretKey
 
 @app.errorhandler(404)
 def not_found(error):
@@ -31,5 +32,6 @@ app.register_blueprint(accounts.views)
 app.static_folder = 'static'
 app.template_folder = 'templates'
 app.debug = True
+app.secret_key = secretKey
 
 userLib.adminAccount(app)

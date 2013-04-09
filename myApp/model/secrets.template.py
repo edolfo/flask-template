@@ -6,3 +6,5 @@ config = {  'MONGODB_DATABASE'  : 'SETME',
 
 admin = {   'email'             : u'SETME',
             'passwd'            : u'SETME'}
+
+secretKey = 'mySuperSecretKeyHere'

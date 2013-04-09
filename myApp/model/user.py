@@ -38,3 +38,9 @@ def hashPassword(passwd):
     
 def isCorrectPassword(user, passwd):
     return Bcrypt.check_password_hash(user.passwd, passwd)
+
+def getUser(email):
+    try:
+        return db.User.find_one({'email': email})
+    except:
+        return False

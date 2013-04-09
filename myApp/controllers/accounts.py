@@ -1,6 +1,7 @@
-from flask import Blueprint, render_template, abort, request
+from flask import Blueprint, render_template, abort, request, session, redirect
 from jinja2 import TemplateNotFound
 import myApp.model.user as userLib
+import simplejson as json
 
 views = Blueprint('accounts', __name__, template_folder='templates')
 
@@ -17,5 +18,22 @@ def login():
         abort(404)
 
 def login_handler():
-    email = request['email']
-    passwd = request['passwd']
+    try:
+        email = request.form['email']
+        passwd = request.form['passwd']
+    except:
+        return json.dumps(False)
+    user = userLib.getUser(email)
+    if not user:
+        return json.dumps(False)
+    if not userLib.isCorrectPassword(user, passwd):
+        return json.dumps(False)
+    
+    session['email'] = email
+    #return render_template('index.html')
+    return redirect('/')
+    
+def logout():
+    if 'email' in session:
+        session.pop('email')
+    return render_template('index.html')
